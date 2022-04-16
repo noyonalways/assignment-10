@@ -1,0 +1,15 @@
+.btn{
+    background: #274035;
+    color: #fff;
+    border: 1px solid #274035;
+    display: inline-block;
+    border-radius: .3rem;
+    text-decoration: none;
+    transition: .3s;
+    padding: .3rem 1.5rem;
+}
+
+.btn:hover{
+    background: transparent;
+    color: #274035;
+}
