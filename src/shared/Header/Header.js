@@ -21,7 +21,7 @@ const Header = () => {
 						}`}
 					>
 						<li>
-							<NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline hover:bg-[#FCF4E0] lg:hover:bg-inherit text-[#0000007a]")}
+							<NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
 							
 								to={"/"}
 							>
@@ -29,7 +29,7 @@ const Header = () => {
 							</NavLink>
 						</li>
 						<li>
-                        <NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline hover:bg-[#FCF4E0] lg:hover:bg-inherit text-[#0000007a]")}
+                        <NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
 							
                             to={"/blogs"}
                         >
@@ -37,7 +37,7 @@ const Header = () => {
                         </NavLink>
 						</li>
 						<li>
-                        <NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline hover:bg-[#FCF4E0] lg:hover:bg-inherit text-[#0000007a]")}
+                        <NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
 							
                             to={"/about"}
                         >
