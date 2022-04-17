@@ -4,7 +4,7 @@ import SocialLogin from '../../components/SocialLogin/SocialLogin';
 
 const SignIn = () => {
     return (
-        <div>
+        <div >
             <div className="mx-auto w-5/6 flex items-center justify-center h-screen">
                 <div className=" py-5 px-4 w-[96%] md:w-[60%] lg:w-[420px] hover:shadow-lg duration-300 shadow rounded ">
                     <h3 className="lg:text-3xl text-2xl text-center mb-3">Sign In</h3>

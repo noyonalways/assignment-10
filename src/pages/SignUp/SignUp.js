@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/Firebase.init';
 import { toast } from 'react-toastify';
+import Spinner from '../../components/Spinner/Spinner';
 
 const SignUp = () => {
 
@@ -67,6 +68,10 @@ const SignUp = () => {
                 toastId: 2
             });
     }
+
+    if(loading){
+        return <Spinner/>
+    }
   
 
      
@@ -116,7 +121,7 @@ const SignUp = () => {
                             <label className={`${!agree && 'text-red-400'}`} htmlFor="terms">Term and conditions</label>
                         </div>
 
-                        <input className='btn block w-full cursor-pointer' type="submit" value="Sign Up" />
+                        <input className='ring-1 ring-[#274035] btn block w-full cursor-pointer' type="submit" value="Sign Up" />
 
                         <small className='block text-center'>
                             Already have an account? 
