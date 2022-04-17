@@ -5,11 +5,12 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/Firebase.init';
 import { toast } from 'react-toastify';
 import Spinner from '../../components/Spinner/Spinner';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 
 const SignUp = () => {
 
     const navigate = useNavigate()
-    const [, setName] = useState({value: '', error: ''});
+    const [name, setName] = useState({value: '', error: ''});
     const [email, setEmail] = useState({value: '', error: ''});
     const [password, setPassword] = useState({value: '', error: ''});
     const [confirmPassword, setConfirmPassword] = useState({value: '', error: ''});
@@ -17,10 +18,14 @@ const SignUp = () => {
 
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
 
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
 
     const handleName = nameInput => {
         if(nameInput){
             setName({value: nameInput, error: ''})
+        }else{
+            setName({value: '', error: 'Input a name'})
         }
     }
 
@@ -55,7 +60,7 @@ const SignUp = () => {
 
     if(user){
         navigate('/');
-        toast.success("Successfully Signup !", {
+        toast.success("Successfully Signup", {
             position: toast.POSITION.TOP_CENTER,
             toastId: 1
         });
@@ -72,11 +77,21 @@ const SignUp = () => {
     if(loading){
         return <Spinner/>
     }
+
+    if(updating){
+        return <Spinner/>
+    }
+
+    if(updateError){
+        toast.error(updateError?.message, {
+            position: toast.POSITION.TOP_CENTER,
+            toastId: 6
+        });
+    }
   
 
-     
 
-    const handleSubmit = event =>{
+    const handleSubmit = async  (event) =>{
         event.preventDefault();
 
         if(email.value === ''){
@@ -87,10 +102,14 @@ const SignUp = () => {
         }
 
         if(email.value && password.value === confirmPassword.value && agree){
-            createUserWithEmailAndPassword(email.value, password.value);
+           await createUserWithEmailAndPassword(email.value, password.value);
+           await updateProfile({displayName: name.value, });
+           
+           
         }
 
     }
+
 
     
     return (

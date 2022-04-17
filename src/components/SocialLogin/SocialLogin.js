@@ -13,11 +13,10 @@ const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
 
-    console.log(user);
 
     if(user){
         navigate('/');
-        toast.success("Successfully SigIn !", {
+        toast.success("Successfully SigIn", {
             position: toast.POSITION.TOP_CENTER,
             toastId: 4
         });
