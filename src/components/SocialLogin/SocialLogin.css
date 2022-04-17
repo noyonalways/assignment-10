@@ -1,0 +1,25 @@
+.or-title{
+    position: relative;
+    text-align: center;
+    color: #00000093;
+
+}
+
+.or-title::before{
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    background: #00000021;
+    left: 10%;
+    top: 10px;
+}
+.or-title::after{
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    background: #00000021;
+    right: 10%;
+    top: 10px;
+}
