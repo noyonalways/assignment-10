@@ -1,0 +1,44 @@
+[
+    {
+      "id": 0,
+      "img": "https://i.ibb.co/pjTWgXP/slider1.png",
+      "name": "Vicki Guerrero",
+      "about": "Incididunt irure eiusmod laboris amet veniam ullamco laboris occaecat commodo tempor in aute. Lorem proident eu in commodo et eu pariatur labore ad tempor deserunt. Adipisicing voluptate in laboris non pariatur consequat. Nisi duis anim laborum anim aute ex cupidatat ipsum consectetur adipisicing aliqua dolor proident occaecat. Magna adipisicing aliqua nisi id esse proident aliquip ad minim non. Proident culpa reprehenderit incididunt velit ut. Eu enim Lorem quis officia laborum esse excepteur pariatur aliquip eiusmod adipisicing aute.\r\n",
+      "category": "Mountain"
+    },
+    {
+      "id": 1,
+      "img": "https://i.ibb.co/Bw29n90/slider2.png",
+      "name": "Quinn Orr",
+      "about": "Duis nulla aute excepteur qui. Sit est ut amet ipsum ea ullamco laborum elit duis id nulla. Aliqua qui ea et occaecat excepteur pariatur in commodo quis velit aliqua est dolore. Lorem excepteur ut labore dolore laborum voluptate voluptate pariatur sint eu pariatur. Sint nulla veniam sunt anim fugiat eu nulla pariatur commodo labore nulla aute. Eu sint cillum mollit sit eu nulla proident in cupidatat commodo enim ullamco. Occaecat do mollit in veniam.\r\n",
+      "category": "Air flowing"
+    },
+    {
+      "id": 2,
+      "img": "https://i.ibb.co/stGSx7t/slider3.png",
+      "name": "Galloway Le",
+      "about": "Qui non et magna consequat ullamco ad dolor. Consectetur occaecat adipisicing consectetur excepteur aliqua velit deserunt. Incididunt duis Lorem sunt Lorem in nisi cillum voluptate.\r\n",
+      "category": "Hill"
+    },
+    {
+      "id": 3,
+      "img": "https://i.ibb.co/vDry3nV/slider4.png",
+      "name": "Nunez Rogers",
+      "about": "Ipsum deserunt aliqua exercitation adipisicing. Aute mollit cillum ex est fugiat ut qui labore et ut minim sint aute esse. Exercitation est dolor mollit dolore incididunt dolor cupidatat et minim incididunt id ex. Ut fugiat eu pariatur cillum incididunt nostrud incididunt quis. Consequat ut non anim id irure sint et pariatur eiusmod velit esse. Consequat anim officia nostrud non.\r\n",
+      "category": "Natural"
+    },
+    {
+      "id": 4,
+      "img": "https://i.ibb.co/V2ZDJx8/slider5.png",
+      "name": "Humphrey Moody",
+      "about": "Sint adipisicing ea occaecat quis excepteur. Enim proident ex pariatur est id. Mollit dolor excepteur duis occaecat dolor id sint laboris. Ipsum ea anim aute reprehenderit velit ad proident ex laborum magna nostrud non incididunt. Commodo culpa mollit consequat nulla sint voluptate reprehenderit adipisicing ex sunt mollit quis mollit. Est dolore aliqua aliqua nisi sunt mollit enim anim dolor. Amet consequat consectetur adipisicing non commodo culpa tempor.\r\n",
+      "category": "River spot"
+    },
+    {
+      "id": 5,
+      "img": "https://i.ibb.co/S3ghZgB/slider6.png",
+      "name": "Carmen Tillman",
+      "about": "Anim quis anim velit est voluptate tempor ullamco. Ipsum est ipsum minim ut est cillum consectetur est exercitation consequat enim aliqua amet. Qui minim nulla sunt adipisicing exercitation anim quis et laboris. Sunt sunt Lorem aliqua minim deserunt. Reprehenderit dolor consequat occaecat est non velit amet sit irure culpa. Amet consectetur aliquip exercitation veniam labore duis cillum velit. Consectetur eu eu ipsum officia laboris officia ea dolor ut sint excepteur.\r\n",
+      "category": "Clouds"
+    }
+  ]
