@@ -39,7 +39,7 @@ const Header = () => {
 						}`}
 					>
 						<li>
-							<NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
+							<NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white " : " py-2 block lg:inline lg:hover:text-[#000] hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a] ")}
 							
 								to={"/"}
 							>
@@ -47,7 +47,7 @@ const Header = () => {
 							</NavLink>
 						</li>
 						<li>
-                        <NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
+                        <NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline lg:hover:text-[#000] hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
 							
                             to={"/blogs"}
                         >
@@ -55,7 +55,7 @@ const Header = () => {
                         </NavLink>
 						</li>
 						<li>
-                        <NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
+                        <NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline lg:hover:text-[#000] hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
 							
                             to={"/about"}
                         >
@@ -64,7 +64,7 @@ const Header = () => {
 						</li>
 						{
 							
-							user? <h3>{user?.displayName}</h3> : <h3>User</h3>
+							user? <h3 className="font-semibold">{user?.displayName}</h3> : <h3 className="font-semibold" >User</h3>
 							
 						}
 					</ul>

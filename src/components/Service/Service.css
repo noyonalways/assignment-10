@@ -9,8 +9,8 @@
     justify-content: center;
     align-items: center;
     color: #fff;
-    font-size: 30px;
     transition: .3s;
+    font-family: 'Dancing Script', cursive;
 }
 
 .service:hover .service-detail{
