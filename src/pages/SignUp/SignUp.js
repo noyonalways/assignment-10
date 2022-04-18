@@ -4,7 +4,6 @@ import SocialLogin from '../../components/SocialLogin/SocialLogin';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/Firebase.init';
 import { toast } from 'react-toastify';
-import Spinner from '../../components/Spinner/Spinner';
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
 
 const SignUp = () => {
@@ -16,9 +15,9 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState({value: '', error: ''});
     const [agree, setAgree] = useState(false);
 
-    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, error] = useCreateUserWithEmailAndPassword(auth);
 
-    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [updateProfile] = useUpdateProfile(auth);
 
 
     const handleName = nameInput => {
@@ -27,7 +26,7 @@ const SignUp = () => {
         }else{
             setName({value: '', error: 'Input a name'})
         }
-    }
+    };
 
     const handleEmail = emailInput => {
         const checkValidEmail = /\S+@\S+\.\S+/;
@@ -64,31 +63,18 @@ const SignUp = () => {
             position: toast.POSITION.TOP_CENTER,
             toastId: 1
         });
-    }
+    };
+
 
     
-    if(error?.message.includes('auth/email-already-in-use')){
+    if(error?.message?.includes('auth/email-already-in-use')){
             toast.error('User already exists', {
                 position: toast.POSITION.TOP_CENTER,
                 toastId: 2
             });
-    }
+    };
 
-    if(loading){
-        return <Spinner/>
-    }
-
-    if(updating){
-        return <Spinner/>
-    }
-
-    if(updateError){
-        toast.error(updateError?.message, {
-            position: toast.POSITION.TOP_CENTER,
-            toastId: 6
-        });
-    }
-  
+    
 
 
     const handleSubmit = async  (event) =>{
@@ -100,6 +86,9 @@ const SignUp = () => {
         if(password.value === ''){
             setPassword({value: '', error: "Password is required"})
         }
+        if(confirmPassword.value === ''){
+            setConfirmPassword({value: '', error: "Password confirmation is required"})
+        }
 
         if(email.value && password.value === confirmPassword.value && agree){
            await createUserWithEmailAndPassword(email.value, password.value);
@@ -108,7 +97,7 @@ const SignUp = () => {
            
         }
 
-    }
+    };
 
 
     
@@ -116,28 +105,28 @@ const SignUp = () => {
         <div className=''>
             <div className="mx-auto w-full px-5 sm:px-12  md:px-0 md:w-5/6 flex items-center justify-center h-screen">
                 <div className=" py-5 px-4 w-full md:w-[60%] lg:w-[420px] hover:shadow-lg duration-300 shadow rounded ">
-                    <h3 className="lg:text-3xl text-2xl text-center mb-3">Sign Up</h3>
+                    <h3 className=" lg:text-3xl text-2xl text-center mb-3">Sign Up</h3>
                     <form onSubmit={handleSubmit} className='space-y-3'>
-                        <input onBlur={(e) => handleName(e.target.value)} className='bg-gray-50 focus:bg-gray-100 duration-200 focus:tracking-wider p-[10px] rounded block w-full outline-none ' placeholder='Name' type="text" />
+                        <input onBlur={(e) => handleName(e.target.value)} className='border bg-gray-50 focus:bg-gray-100 duration-200 focus:tracking-wider p-[10px] rounded block w-full outline-none ' placeholder='Name' type="text" />
 
-                        <input onBlur={(e) => handleEmail(e.target.value)} className='bg-gray-50 focus:bg-gray-100 duration-200 focus:tracking-wider p-[10px] rounded block w-full outline-none ' placeholder='Email' type="email" />
+                        <input onBlur={(e) => handleEmail(e.target.value)} className='border bg-gray-50 focus:bg-gray-100 duration-200 focus:tracking-wider p-[10px] rounded block w-full outline-none ' placeholder='Email' type="email" />
                         {
                             email?.error && <small className='text-red-400'>{email.error}</small>
                         }
 
-                        <input onBlur={(e) => handlePassword(e.target.value)} className='bg-gray-50 focus:bg-gray-100 duration-200 focus:tracking-wider p-[10px] rounded block w-full outline-none ' placeholder='Password' type="password" />
+                        <input onBlur={(e) => handlePassword(e.target.value)} className='border bg-gray-50 focus:bg-gray-100 duration-200 focus:tracking-wider p-[10px] rounded block w-full outline-none ' placeholder='Password' type="password" />
                         {
                             password?.error && <small className='text-red-400'>{password.error}</small>
                         }
                         
-                        <input onBlur={(e) => handleConfirmPassword(e.target.value)} className='bg-gray-50 focus:bg-gray-100 duration-200 focus:tracking-wider p-[10px] rounded block w-full outline-none ' placeholder='Confirm Password' type="password" />
+                        <input onBlur={(e) => handleConfirmPassword(e.target.value)} className='border bg-gray-50 focus:bg-gray-100 duration-200 focus:tracking-wider p-[10px] rounded block w-full outline-none ' placeholder='Confirm Password' type="password" />
                         {
                             confirmPassword?.error && <small className='text-red-400'>{confirmPassword.error}</small>
                         }
 
                         <div className='flex space-x-2 items-center'>
                             <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />
-                            <label className={`${!agree && 'text-red-400'}`} htmlFor="terms">Term and conditions</label>
+                            <label className={`text-red-400 ${agree && 'text-black'}`} htmlFor="terms">Term and conditions</label>
                         </div>
 
                         <input className='ring-1 ring-[#274035] btn block w-full cursor-pointer' type="submit" value="Sign Up" />

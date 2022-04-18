@@ -4,7 +4,6 @@ import Service from '../Service/Service';
 
 const Services = () => {
     const [services, ] = useFetchData("services.json");
-    console.log(services);
     return (
         <section className='py-8'>
             <div className="mx-auto w-5/6">

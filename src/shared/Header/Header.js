@@ -2,6 +2,7 @@ import React, {useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import { HiOutlineX } from "react-icons/hi";
+import { HiUserCircle } from "react-icons/hi";
 import './Header.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/Firebase.init';
@@ -47,25 +48,38 @@ const Header = () => {
 							</NavLink>
 						</li>
 						<li>
-                        <NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline lg:hover:text-[#000] hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
-							
-                            to={"/blogs"}
-                        >
-                            Blogs
-                        </NavLink>
+							<NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline lg:hover:text-[#000] hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
+								
+								to={"/blogs"}
+							>
+								Blogs
+							</NavLink>
 						</li>
 						<li>
-                        <NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline lg:hover:text-[#000] hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
-							
-                            to={"/about"}
-                        >
-                            About
-                        </NavLink>
+							<NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline lg:hover:text-[#000] hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
+								
+								to={"/about"}
+							>
+								About
+							</NavLink>
 						</li>
 						{
 							
 							user? <h3 className="font-semibold">{user?.displayName}</h3> : <h3 className="font-semibold" >User</h3>
 							
+						}
+
+						{
+							user?.photoURL? <li>
+									<div className="py-2 lg:inline">
+										<img className="w-10 mx-auto h-10 rounded-full" src={user.photoURL} alt="" />
+									</div>
+							</li> : 
+							<li>
+								<div>
+									<HiUserCircle className="w-10 mx-auto h-10 rounded-full"/>
+								</div>
+							</li>
 						}
 					</ul>
 
