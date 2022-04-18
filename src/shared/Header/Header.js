@@ -36,7 +36,7 @@ const Header = () => {
 					</Link>
 					<ul
 						className={`text-center rounded lg:py-0 bg-[#fff] lg:bg-inherit w-full lg:w-auto absolute duration-200 lg:static left-0 lg:flex lg:items-center lg:space-x-6 overflow-hidden ${
-							open ? "top-[3.1rem]" : "top-[-200px]"
+							open ? "top-[3.1rem] shadow pb-3" : "top-[-200px]"
 						}`}
 					>
 						<li>
@@ -65,26 +65,26 @@ const Header = () => {
 						</li>
 						{
 							
-							user? <h3 className="font-semibold">{user?.displayName}</h3> : <h3 className="font-semibold" >User</h3>
+							user?.displayName ? <h3 className="font-semibold">{user.displayName}</h3> : <h3 className="font-semibold" >User</h3>
 							
 						}
 
 						{
-							user?.photoURL? <li>
+							user?.photoURL ? <li>
 									<div className="py-2 lg:inline">
 										<img className="w-10 mx-auto h-10 rounded-full" src={user.photoURL} alt="" />
 									</div>
 							</li> : 
 							<li>
 								<div>
-									<HiUserCircle className="w-10 mx-auto h-10 rounded-full"/>
+									<HiUserCircle className="text-[#274035] w-10 mx-auto h-10 rounded-full"/>
 								</div>
 							</li>
 						}
 					</ul>
 
                     {
-						user? <div className="flex items-center space-x-3">
+						user ? <div className="flex items-center space-x-3">
 									<button onClick={() => signOut(auth)} className="btn">Signout</button>
 							  </div> 
 						: <div>

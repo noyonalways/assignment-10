@@ -5,9 +5,10 @@ const Service = ({service}) => {
     const {name, img, about, price} = service;
 
     return (
-        <div className='duration-300 bg-orange-200 service relative overflow-hidden rounded cursor-pointer'>
-            <div className='service-img'>
-                <img src={img} alt="" />
+        <div data-aos="fade-up" 
+        data-aos-duration="1500" className='duration-300 bg-orange-200 service relative overflow-hidden rounded cursor-pointer'>
+            <div className='service-img '>
+                <img className='w-full duration-300' src={img} alt="" />
             </div>
             <h3 className="service-title opacity-90 text-2xl md:text-3xl">{name}</h3>
             <div className="duration-300 opacity-0 p-3 flex flex-col items-center justify-center service-detail absolute left-0 top-60 bg-[#0000004d] h-full  text-white w-full">

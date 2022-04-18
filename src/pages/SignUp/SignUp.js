@@ -15,7 +15,7 @@ const SignUp = () => {
     const [password, setPassword] = useState({value: '', error: ''});
     const [confirmPassword, setConfirmPassword] = useState({value: '', error: ''});
 
-    const [createUserWithEmailAndPassword, user, error] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, error] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
     const [updateProfile] = useUpdateProfile(auth);
 
@@ -59,20 +59,26 @@ const SignUp = () => {
 
     if(user){
         navigate('/');
-        toast.success("Successfully Signup", {
+        toast.success("Successfully Signup and verification mail sent", {
             position: toast.POSITION.TOP_CENTER,
             toastId: 1
         });
     };
 
 
-    
+
+
     if(error?.message?.includes('auth/email-already-in-use')){
-            toast.error('User already exists', {
-                position: toast.POSITION.TOP_CENTER,
-                toastId: 2
-            });
-    };
+        toast.error('User already exists', {
+            position: toast.POSITION.TOP_CENTER,
+            toastId: 2
+        });
+    }else{
+        toast.error(error?.message, {
+            position: toast.POSITION.TOP_CENTER,
+            toastId: 2
+        });
+    }
 
     
 
