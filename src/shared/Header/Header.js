@@ -36,7 +36,7 @@ const Header = () => {
 					</Link>
 					<ul
 						className={`text-center rounded lg:py-0 bg-[#fff] lg:bg-inherit w-full lg:w-auto absolute duration-200 lg:static left-0 lg:flex lg:items-center lg:space-x-6 overflow-hidden ${
-							open ? "top-[3.1rem]" : "top-[-180px]"
+							open ? "top-[3.1rem]" : "top-[-200px]"
 						}`}
 					>
 						<li>

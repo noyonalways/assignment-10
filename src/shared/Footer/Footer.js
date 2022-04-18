@@ -4,11 +4,12 @@ import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+import './Footer.css'
 
 const Footer = () => {
     return (
-        <footer className="text-gray-600 body-font bg-white">
-            <div className="mx-auto w-[94%] md:w-5/6 py-5">    
+        <footer className="bg-contain bg-right-top text-gray-600 body-font bg-white">
+            <div className="mx-auto w-[94%] md:w-5/6 py-5 inner-footer">    
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div className="space-y-3 p-2">
                         <h2 className="text-xl font-medium text-gray-900 tracking-widest mb-3">Quick Links
