@@ -48,6 +48,15 @@ const Header = () => {
 							</NavLink>
 						</li>
 						<li>
+							<NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white " : " py-2 block lg:inline lg:hover:text-[#000] hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a] ")}
+							
+								to={"/services"}
+							>
+								Services
+							</NavLink>
+						</li>
+						
+						<li>
 							<NavLink className={({isActive}) => (isActive ? "py-2 block lg:inline lg:hover:bg-inherit lg:bg-inherit bg-[#274035] lg:text-[#274035] text-white" : " py-2 block lg:inline lg:hover:text-[#000] hover:bg-[#81ccac33] lg:hover:bg-inherit text-[#0000007a]")}
 								
 								to={"/blogs"}
