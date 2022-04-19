@@ -12,7 +12,7 @@ const About = () => {
                         <div className='space-y-3'>
                             <p className='text-xl'>Hello, My name is</p>
                             <h2 className="text-5xl">Md Noyon Rahman</h2>
-                            <span className='text-2xl'>Programming Hero Learner</span>
+                            <span className='text-2xl text-[#274035]'>Programming Hero Learner</span>
                             <p className='text-base'>I am a student, currently living in Gazipur, Dhaka, Bangladesh. My interests range from photography to technology. My goal is to become a passionate full-stack web developer. Next few months I want to focus on my learning habits to fulfill my dream. I will not compromise my learning and practice. I will work harder and harder. Isha Allah. </p>
                         </div>
                     </div>
