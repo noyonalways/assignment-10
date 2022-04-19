@@ -7,10 +7,10 @@ const Blogs = () => {
     const [questions] = useFetchData('questions.json');
 
 	return (
-		<section className="py-8">
+		<section className="py-16 ">
 			<div className="mx-auto w-11/12 md:w-5/6 ">
             <h2 className="text-3xl text-center mb-12 section-title" data-aos="zoom-in">Blogs</h2>
-				<div className="flex md:justify-between flex-wrap items-center">
+				<div className="flex md:justify-between flex-wrap items-center mb-10">
 					<div className="basis-[45%] sm:basis-[50] md:basis-[30%] lg:basis-[25%] mx-auto md:mx-0" data-aos="fade-right" data-aos-duration="1000">
                         <img src="https://cdn-icons-png.flaticon.com/512/5361/5361003.png" alt="" className="w-full" />
                     </div>

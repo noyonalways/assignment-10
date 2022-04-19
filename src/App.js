@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
+import Services from './components/Services/Services';
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/services' element={<Home></Home>}></Route>
+        <Route path='/services' element={<Services></Services>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/signin' element={<SignIn></SignIn>}></Route>

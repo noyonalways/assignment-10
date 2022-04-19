@@ -2,16 +2,16 @@
     {
       "id": 0,
       "question": "Differente between authorization and authentication ?",
-      "answer": "Ad nulla et laboris aliqua id Lorem ipsum aliqua ad nulla voluptate sunt eu. Velit labore minim esse commodo officia ea nisi laboris. Voluptate sit labore reprehenderit commodo. Cillum fugiat aliquip cupidatat ipsum nostrud consectetur dolor Lorem. Excepteur ut id voluptate est. Enim voluptate et eiusmod Lorem adipisicing occaecat sit laboris in fugiat in aliquip ullamco aliquip."
+      "answer": "Authentication confirms that users are who they say they are. Authorization gives those users permission to access a resource. Authentication is the act of validating that users are whom they claim to be. This is the first step in any security process. In some instances, systems require the successful verification of more than one factor before granting access. Authorization in system security is the process of giving the user permission to access a specific resource or function. This term is often used interchangeably with access control or client privilege."
     },
     {
       "id": 1,
       "question": "Why are you use firebase? What other option do you have to implement authentication?",
-      "answer": "Id ipsum sunt ullamco est. Lorem ad anim laborum eiusmod proident et ullamco excepteur dolor reprehenderit laborum eu commodo nulla. Dolore aliqua mollit dolore excepteur enim et adipisicing qui enim dolore eu nostrud et. Est quis id fugiat adipisicing est culpa consequat culpa consectetur sit reprehenderit incididunt. Id exercitation incididunt magna labore nisi fugiat adipisicing amet consectetur eiusmod laborum elit commodo eiusmod."
+      "answer": "Google's Firebase is a mobile platform that lets us develop mobile apps. It is especially geared towards business apps, with the intention of helping businesses grow their user bases and increase their profits through their mobile apps. The Firebase Realtime Database lets you build rich, collaborative applications by allowing secure access to the database directly from client-side code. Data is persisted locally, and even while offline, realtime events continue to fire, giving the end user a responsive experience. There is a growing demand for different types of user authentication technologies for both online and in physical systems. The motivation to authenticate users ranges from access control reasons to business development purposes like adding e-commerce elements."
     },
     {
       "id": 2,
       "question": "What other services does firebase provide other than authenticate ?",
-      "answer": "Aute laboris ad incididunt qui qui labore sunt adipisicing incididunt amet quis ullamco exercitation non. Lorem laborum exercitation aute nulla amet dolore do deserunt occaecat. Laborum consequat adipisicing proident ipsum eiusmod. Tempor laborum aute cupidatat eu minim velit esse pariatur aute. Do do qui fugiat enim amet deserunt exercitation tempor voluptate labore commodo. Anim ut velit ut enim exercitation labore commodo aliquip."
+      "answer": "Firebase is a full package that can help in developing your mobile or web applications faster with fewer resources and more efficiency. Cloud Firestore, Cloud Functions, Hosting, Cloud Storage, Google Analytics, Google Analytics, Cloud Messaging, Dynamic Links, Remote Config, Realtime database. All of this is firebase services."
     }
   ]
