@@ -43,20 +43,6 @@ const SignIn = () => {
         return <Spinner/>
     }
 
-    if(error?.message){
-        if(error.message.includes('auth/user-not-found')){
-            toast.error("User not found", {
-                position: toast.POSITION.TOP_CENTER,
-                toastId: 2
-            });
-        }else{
-            toast.error(error.message, {
-                position: toast.POSITION.TOP_CENTER,
-                toastId: 2
-            });
-        }
-        
-    }
 
     const handleSubmit = event =>{
         event.preventDefault();
@@ -97,6 +83,10 @@ const SignIn = () => {
                             New user? 
                             <Link className='text-[#274035] font-semibold' to='/signup'>Create Account</Link>
                         </small>
+
+                        {
+                            error?.message && <small className='block text-red-400 text-center bg-red-50 py-1 rounded-md'>{error?.message.includes('auth/user-not-found') ? 'User not found' : error?.message}</small>
+                        }
                         
                         <Link className='inline-block' to=''>Forget Password</Link>
                     </form>

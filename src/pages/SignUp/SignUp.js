@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/Firebase.init';
 import { toast } from 'react-toastify';
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
+import Spinner from '../../components/Spinner/Spinner';
 import './SignUp.css'
 
 const SignUp = () => {
@@ -15,7 +16,7 @@ const SignUp = () => {
     const [password, setPassword] = useState({value: '', error: ''});
     const [confirmPassword, setConfirmPassword] = useState({value: '', error: ''});
 
-    const [createUserWithEmailAndPassword, user, error] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
     const [updateProfile] = useUpdateProfile(auth);
 
@@ -41,7 +42,11 @@ const SignUp = () => {
     const handlePassword = passwordInput => {
         if(passwordInput.length < 6){
             setPassword({value: '', error:'Password too short'})
-        }else{
+        }
+        else if(!/(?=.*[A-Z])/.test(passwordInput)){
+            setPassword({value: '', error:'Password must contain a capital letter'})
+        }
+        else{
             setPassword({value: passwordInput, error:''})
 
         }  
@@ -65,33 +70,28 @@ const SignUp = () => {
         });
     };
 
-
-
-
-    if(error?.message?.includes('auth/email-already-in-use')){
-        toast.error('User already exists', {
-            position: toast.POSITION.TOP_CENTER,
-            toastId: 2
-        });
-    }else{
-        toast.error(error?.message, {
-            position: toast.POSITION.TOP_CENTER,
-            toastId: 2
-        });
+    
+    if(loading){
+        return <Spinner/>
     }
-
     
 
 
     const handleSubmit = async  (event) =>{
         event.preventDefault();
 
+        if(name.value === ''){
+            setName({value: '', error: "Name is required"})
+        }
+
         if(email.value === ''){
             setEmail({value: '', error: "Email is required"})
         }
+
         if(password.value === ''){
             setPassword({value: '', error: "Password is required"})
         }
+
         if(confirmPassword.value === ''){
             setConfirmPassword({value: '', error: "Password confirmation is required"})
         }
@@ -114,6 +114,9 @@ const SignUp = () => {
                     <h3 className=" lg:text-3xl text-2xl text-center mb-3">Sign Up</h3>
                     <form onSubmit={handleSubmit} className='space-y-3'>
                         <input onBlur={(e) => handleName(e.target.value)} className='border bg-gray-50 focus:bg-gray-100 duration-200 focus:tracking-wider p-[10px] rounded block w-full outline-none ' placeholder='Name' type="text" />
+                        {
+                            name?.error && <small className='text-red-400'>{name.error}</small>
+                        }
 
                         <input onBlur={(e) => handleEmail(e.target.value)} className='border bg-gray-50 focus:bg-gray-100 duration-200 focus:tracking-wider p-[10px] rounded block w-full outline-none ' placeholder='Email' type="email" />
                         {
@@ -130,14 +133,17 @@ const SignUp = () => {
                             confirmPassword?.error && <small className='text-red-400'>{confirmPassword.error}</small>
                         }
 
-                        
-
                         <input className='ring-1 ring-[#274035] btn block w-full cursor-pointer' type="submit" value="Sign Up" />
 
                         <small className='block text-center'>
                             Already have an account? 
                             <Link className='text-[#274035] font-semibold' to='/signin'>Sign In</Link>
                         </small>
+
+                        {
+                            error?.message && <small className='text-center block text-red-400 py-1 bg-red-50 rounded-md'>{error.message.includes('auth/email-already-in-use') ? "User already exists" : error.message}</small>
+                        }
+
                     </form>
                     <SocialLogin/>
                 </div>
