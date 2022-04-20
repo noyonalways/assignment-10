@@ -1,5 +1,4 @@
 import React from 'react';
-import AboutImage from '../../assets/about/2.png';
 import './About.css';
 
 const About = () => {
@@ -17,7 +16,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className='order-1 basis-[60%] md:basis-[32%] mx-auto md:mx-0'  data-aos="zoom-in" data-aos-duration="1000">
-                        <img className='w-full rounded-full' src={AboutImage} alt="" />
+                        <img className='w-full rounded-full' src='https://i.ibb.co/j4dnF2b/2.png' alt="" />
                     </div>
                 </div>
             </div>

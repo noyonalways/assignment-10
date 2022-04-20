@@ -1,5 +1,5 @@
 import React, {useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../components/SocialLogin/SocialLogin';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase/Firebase.init';
@@ -12,6 +12,9 @@ const SignIn = () => {
     const [email, setEmail] = useState({value: "", error: ""});
     const [password, setPassword] = useState({value: "", error: ""});
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
     const handleEmail = emailInput =>{
         const checkValidEmail = /\S+@\S+\.\S+/;
@@ -32,8 +35,8 @@ const SignIn = () => {
     }
 
     if(user){
-        navigate('/');
-        toast.success("Welcome back", {
+        navigate(from, {replace: true});
+        toast.success("Successfully Signin", {
             position: toast.POSITION.TOP_CENTER,
             toastId: 1
         });
@@ -65,7 +68,8 @@ const SignIn = () => {
     return (
         <div >
             <div className=" form-bg mx-auto w-full px-5 sm:px-12  md:px-0 md:w-5/6 flex items-center justify-center h-screen">
-                <div className=" py-5 px-4 w-full md:w-[60%] lg:w-[420px] hover:shadow-lg duration-300 shadow rounded bg-white">
+                <div data-aos="fade-up" 
+        data-aos-duration="1500" className=" py-5 px-4 w-full md:w-[60%] lg:w-[420px] hover:shadow-lg duration-300 shadow rounded bg-white">
                     <h3 className="lg:text-3xl text-2xl text-center mb-3">Sign In</h3>
                     <form onSubmit={handleSubmit} className='space-y-3'>
                         <input onBlur={(e) => handleEmail(e.target.value)} className='border bg-gray-50 focus:bg-gray-100 duration-200 focus:tracking-wider p-[10px] rounded block w-full outline-none ' placeholder='Email' type="email" />
