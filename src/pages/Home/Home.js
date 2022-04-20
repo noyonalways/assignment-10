@@ -1,4 +1,5 @@
 import React from 'react';
+import Featured from '../../components/Featured/Featured';
 import Services from '../../components/Services/Services';
 import Slider from '../../components/Slider/Slider';
 
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Slider></Slider>
             <Services/>
+            <Featured/>
         </div>
     );
 };
