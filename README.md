@@ -29,7 +29,7 @@
 - `React icons` for icons
 
 
-<img src=""/>
+<img src="./src/assets/screenshots/laptop-view.png" alt="" />
 
 
 ## ☕ Connect with me!
