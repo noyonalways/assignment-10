@@ -15,7 +15,7 @@ const Service = ({service}) => {
             <div className="duration-300 opacity-0 p-3 flex flex-col items-center justify-center service-detail absolute left-0 top-60 bg-[#0000004d] h-full  text-white w-full">
                 <p className='text-center '>{about.length > 100 ? about?.slice(0, 100) : about}</p>
                 <h3 className="text-xl">${price}</h3>
-                <Link to='/checkout' className="inline-flex text-white bg-[#274035] border-0 py-2 px-6 focus:outline-none hover:bg-[#1f332a] rounded">Get service</Link>
+                <Link to='/checkout' className="inline-flex text-white bg-[#274035] border-0 py-2 px-6 focus:outline-none hover:bg-[#1f332a] rounded">Book Package</Link>
             </div>
         </div>
     );

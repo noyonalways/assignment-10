@@ -6,16 +6,18 @@ import auth from '../../firebase/Firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import Spinner from '../Spinner/Spinner';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
 
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
 
     if(user){
-        navigate('/');
+        navigate(from, {replace: true});
         toast.success("Successfully SigIn", {
             position: toast.POSITION.TOP_CENTER,
             toastId: 4

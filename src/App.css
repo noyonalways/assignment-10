@@ -3,3 +3,17 @@
 body{
   font-family: 'Overpass', sans-serif;
 }
+
+
+::-webkit-scrollbar{
+  width: 12px;
+}
+
+::-webkit-scrollbar-track{
+  background: #dfdfdf
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(to bottom, #86d1b1 , #416b59);
+  border-radius: 25px;
+}
