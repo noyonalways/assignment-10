@@ -51,6 +51,10 @@ const SignIn = () => {
     const handleResetPassword = async  () =>{
         if(email.value){
             await sendPasswordResetEmail(email.value);
+            toast.success("Reset Password Email sent", {
+                position: toast.POSITION.TOP_CENTER,
+                toastId: 1
+            });
         }else{
             setEmail({value: "", error: "Enter email first"})
         }
